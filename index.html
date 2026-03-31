@@ -10,7 +10,7 @@
 :root {
   --bg:#07090f;--bg2:#0b0f1a;--bg3:#101828;--surface:#131c2e;--surface2:#1a2540;
   --bd:rgba(88,166,255,.10);--bd2:rgba(88,166,255,.22);
-  --a1:#4f8ef7;--a2:#00c9a7;--a3:#f0a340;--a4:#e05cf0;
+  --a1:#4f8ef7;--a2:#00c9a7;--a3:#f0a340;--a4:#e05cf0;--a5:#ff6b6b;--a6:#54d4ff;
   --tx:#dde8f8;--tx2:#7d97bc;--tx3:#3d5470;
 }
 html{scroll-behavior:smooth;}
@@ -105,30 +105,48 @@ h1.hname span{color:transparent;-webkit-text-stroke:1px rgba(79,142,247,.55);}
 .sk:nth-child(2) .skbf,.sk:nth-child(5) .skbf{background:var(--a2);}
 .sk:nth-child(3) .skbf,.sk:nth-child(6) .skbf{background:var(--a3);}
 
-/* PROJECTS */
+/* PROJECTS — 3-col grid for 6 cards */
 #projects{padding:120px 64px;background:var(--bg);}
-.pg{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:64px;}
-.proj{background:var(--surface);border:1px solid var(--bd);padding:44px 38px;position:relative;overflow:hidden;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));transition:all .35s;cursor:default;}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:64px;}
+.proj{background:var(--surface);border:1px solid var(--bd);padding:36px 30px;position:relative;overflow:hidden;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));transition:all .35s;cursor:default;}
 .proj:hover{border-color:var(--bd2);transform:translateY(-4px);}
-.proj::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .35s;background:radial-gradient(ellipse at top left,rgba(79,142,247,.055) 0%,transparent 55%);}
+.proj::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .35s;}
 .proj:hover::before{opacity:1;}
-.pn{font-family:'DM Serif Display',serif;font-size:58px;font-weight:400;color:rgba(79,142,247,.07);position:absolute;top:20px;right:28px;line-height:1;letter-spacing:-.04em;transition:color .35s;pointer-events:none;}
-.proj:hover .pn{color:rgba(79,142,247,.13);}
-.pbadge{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:16px;}
+.proj:nth-child(1)::before{background:radial-gradient(ellipse at top left,rgba(79,142,247,.06) 0%,transparent 55%);}
+.proj:nth-child(2)::before{background:radial-gradient(ellipse at top left,rgba(0,201,167,.06) 0%,transparent 55%);}
+.proj:nth-child(3)::before{background:radial-gradient(ellipse at top left,rgba(240,163,64,.06) 0%,transparent 55%);}
+.proj:nth-child(4)::before{background:radial-gradient(ellipse at top left,rgba(224,92,240,.06) 0%,transparent 55%);}
+.proj:nth-child(5)::before{background:radial-gradient(ellipse at top left,rgba(255,107,107,.06) 0%,transparent 55%);}
+.proj:nth-child(6)::before{background:radial-gradient(ellipse at top left,rgba(84,212,255,.06) 0%,transparent 55%);}
+.pn{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;position:absolute;top:16px;right:22px;line-height:1;letter-spacing:-.04em;transition:color .35s;pointer-events:none;}
+.proj:nth-child(1) .pn{color:rgba(79,142,247,.07);}  .proj:nth-child(1):hover .pn{color:rgba(79,142,247,.14);}
+.proj:nth-child(2) .pn{color:rgba(0,201,167,.07);}   .proj:nth-child(2):hover .pn{color:rgba(0,201,167,.14);}
+.proj:nth-child(3) .pn{color:rgba(240,163,64,.07);}  .proj:nth-child(3):hover .pn{color:rgba(240,163,64,.14);}
+.proj:nth-child(4) .pn{color:rgba(224,92,240,.07);}  .proj:nth-child(4):hover .pn{color:rgba(224,92,240,.14);}
+.proj:nth-child(5) .pn{color:rgba(255,107,107,.07);} .proj:nth-child(5):hover .pn{color:rgba(255,107,107,.14);}
+.proj:nth-child(6) .pn{color:rgba(84,212,255,.07);}  .proj:nth-child(6):hover .pn{color:rgba(84,212,255,.14);}
+.pbadge{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:14px;}
 .proj:nth-child(1) .pbadge{color:var(--a1);}
 .proj:nth-child(2) .pbadge{color:var(--a2);}
 .proj:nth-child(3) .pbadge{color:var(--a3);}
 .proj:nth-child(4) .pbadge{color:var(--a4);}
-.ptitle{font-size:19px;font-weight:600;color:var(--tx);letter-spacing:-.015em;line-height:1.25;margin-bottom:14px;}
-.pdesc{font-size:13.5px;color:var(--tx2);line-height:1.8;font-weight:300;}
-.pdid{margin-top:20px;padding:14px 16px;border-left:2px solid var(--a1);font-size:12px;color:var(--tx2);line-height:1.7;}
-.proj:nth-child(1) .pdid{background:rgba(79,142,247,.05);border-color:var(--a1);}
-.proj:nth-child(2) .pdid{background:rgba(0,201,167,.05);border-color:var(--a2);}
-.proj:nth-child(3) .pdid{background:rgba(240,163,64,.05);border-color:var(--a3);}
-.proj:nth-child(4) .pdid{background:rgba(224,92,240,.05);border-color:var(--a4);}
+.proj:nth-child(5) .pbadge{color:var(--a5);}
+.proj:nth-child(6) .pbadge{color:var(--a6);}
+.ptitle{font-size:17px;font-weight:600;color:var(--tx);letter-spacing:-.015em;line-height:1.25;margin-bottom:12px;}
+.pdesc{font-size:13px;color:var(--tx2);line-height:1.8;font-weight:300;}
+.pstat{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.pstat-item{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--tx3);padding:4px 10px;background:var(--bg3);border:1px solid var(--bd);}
+.pstat-item strong{color:var(--tx2);}
+.pdid{margin-top:16px;padding:12px 14px;font-size:12px;color:var(--tx2);line-height:1.7;}
+.proj:nth-child(1) .pdid{background:rgba(79,142,247,.05);border-left:2px solid var(--a1);}
+.proj:nth-child(2) .pdid{background:rgba(0,201,167,.05);border-left:2px solid var(--a2);}
+.proj:nth-child(3) .pdid{background:rgba(240,163,64,.05);border-left:2px solid var(--a3);}
+.proj:nth-child(4) .pdid{background:rgba(224,92,240,.05);border-left:2px solid var(--a4);}
+.proj:nth-child(5) .pdid{background:rgba(255,107,107,.05);border-left:2px solid var(--a5);}
+.proj:nth-child(6) .pdid{background:rgba(84,212,255,.05);border-left:2px solid var(--a6);}
 .pdid strong{color:var(--tx);font-weight:500;}
-.pmeta{display:flex;gap:7px;flex-wrap:wrap;margin-top:22px;padding-top:20px;border-top:1px solid var(--bd);}
-.pill{font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:4px 11px;background:var(--bg3);border:1px solid var(--bd);color:var(--tx3);}
+.pmeta{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--bd);}
+.pill{font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;background:var(--bg3);border:1px solid var(--bd);color:var(--tx3);}
 
 /* CERTS */
 #certs{padding:80px 64px;background:var(--bg2);}
@@ -158,8 +176,6 @@ h1.hname span{color:transparent;-webkit-text-stroke:1px rgba(79,142,247,.55);}
 .fi,.fta{background:var(--surface);border:1px solid var(--bd);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:13.5px;padding:13px 16px;outline:none;transition:border-color .25s;resize:none;}
 .fi:focus,.fta:focus{border-color:var(--bd2);}
 .fta{min-height:110px;}
-
-/* FORM SUCCESS / ERROR */
 .form-msg{display:none;padding:12px 16px;font-size:13px;letter-spacing:.04em;margin-top:4px;}
 .form-msg.success{display:block;background:rgba(0,201,167,.08);border:1px solid rgba(0,201,167,.3);color:var(--a2);}
 .form-msg.error{display:block;background:rgba(224,92,240,.08);border:1px solid rgba(224,92,240,.3);color:var(--a4);}
@@ -172,10 +188,10 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
 /* REVEAL */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;}
 .rv.on{opacity:1;transform:none;}
-.d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}
+.d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}.d5{transition-delay:.48s}.d6{transition-delay:.58s}
 
-@media(max-width:1100px){.kpis{display:none;}.sg{grid-template-columns:repeat(2,1fr);}.pg{grid-template-columns:1fr;}.cgrid{grid-template-columns:1fr;gap:48px;}.tl{grid-template-columns:1fr;}}
-@media(max-width:700px){nav{padding:14px 22px;}.nav-links{gap:18px;}#hero,#experience,#skills,#projects,#certs,#contact{padding-left:22px;padding-right:22px;}.sg{grid-template-columns:1fr;}.tl{padding-left:26px;}footer{padding:22px;flex-direction:column;gap:8px;text-align:center;}}
+@media(max-width:1200px){.kpis{display:none;}.sg{grid-template-columns:repeat(2,1fr);}.pg{grid-template-columns:repeat(2,1fr);}.cgrid{grid-template-columns:1fr;gap:48px;}.tl{grid-template-columns:1fr;}}
+@media(max-width:700px){nav{padding:14px 22px;}.nav-links{gap:18px;}#hero,#experience,#skills,#projects,#certs,#contact{padding-left:22px;padding-right:22px;}.sg{grid-template-columns:1fr;}.pg{grid-template-columns:1fr;}.tl{padding-left:26px;}footer{padding:22px;flex-direction:column;gap:8px;text-align:center;}}
 </style>
 </head>
 <body>
@@ -217,7 +233,7 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
   <div class="kpis">
     <div class="kpi"><div class="kv">2+</div><div class="kl">Years Exp.</div></div>
     <div class="kpi"><div class="kv">8–9</div><div class="kl">Centers MIS</div></div>
-    <div class="kpi"><div class="kv">VC</div><div class="kl">Exposure</div></div>
+    <div class="kpi"><div class="kv">6</div><div class="kl">Models Built</div></div>
     <div class="kpi"><div class="kv">CA</div><div class="kl">Firm Trained</div></div>
   </div>
   <div class="scroll-hint"><div class="shl"></div>Scroll</div>
@@ -234,6 +250,8 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
     <div class="ti">VC &amp; M&amp;A Research <em>///</em></div>
     <div class="ti">Audit &amp; Taxation <em>///</em></div>
     <div class="ti">Budgeting &amp; Variance <em>///</em></div>
+    <div class="ti">Project Finance <em>///</em></div>
+    <div class="ti">Equity Research <em>///</em></div>
     <div class="ti">Financial Modelling <em>///</em></div>
     <div class="ti">DCF Valuation <em>///</em></div>
     <div class="ti">MIS Reporting <em>///</em></div>
@@ -242,6 +260,8 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
     <div class="ti">VC &amp; M&amp;A Research <em>///</em></div>
     <div class="ti">Audit &amp; Taxation <em>///</em></div>
     <div class="ti">Budgeting &amp; Variance <em>///</em></div>
+    <div class="ti">Project Finance <em>///</em></div>
+    <div class="ti">Equity Research <em>///</em></div>
   </div>
 </div>
 
@@ -338,63 +358,131 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECTS — 6 models -->
 <section id="projects">
   <div class="rv">
     <div class="slabel">Work Samples</div>
-    <h2 class="stitle">Projects</h2>
+    <h2 class="stitle">Financial Models</h2>
   </div>
   <div class="pg">
 
+    <!-- 01 Toll Road -->
     <div class="proj rv d1">
       <div class="pn">01</div>
-      <div class="pbadge">DCF Valuation · JP Morgan Forage Simulation</div>
-      <div class="ptitle">Happy Hour Co. — DCF Model & Sensitivity Analysis</div>
-      <div class="pdesc">Full discounted cash flow valuation for Happy Hour Co., a UK-listed F&amp;B retailer, as part of the JP Morgan Investment Banking Job Simulation (March 2026). Modelled a 5-year FCF projection and terminal value to derive an equity range.</div>
+      <div class="pbadge">Infrastructure · Project Finance</div>
+      <div class="ptitle">Toll Road — 28-Year Concession Model</div>
+      <div class="pdesc">Project finance model for Rohtak Hissar Tollway Pvt. Ltd. covering a 28-year concession with 2 toll plazas. Built to assess project viability and IRR under multiple scenarios.</div>
+      <div class="pstat">
+        <div class="pstat-item">Project IRR <strong>12.6%</strong></div>
+        <div class="pstat-item">Horizon <strong>FY2013–41</strong></div>
+        <div class="pstat-item">Currency <strong>INR Cr</strong></div>
+        <div class="pstat-item">Sheets <strong>10</strong></div>
+      </div>
       <div class="pdid">
-        <strong>What I built:</strong> Revenue &amp; EBITDA forecast FY20–FY24 from actuals, WACC at 8.5%, perpetuity growth at 0.5%, net debt bridge of $84.6M, and a two-way sensitivity table (WACC × growth rate). Circular reference switch for iterative debt calculations included.
+        <strong>What I built:</strong> FCFF-based project IRR, full 3-statement model (IS/BS/CFS), intangible asset schedule (toll rights), debt service module, and a scenario sensitivity matrix across concession period, govt grant, and toll revision rate — 7 cases.
       </div>
       <div class="pmeta">
-        <span class="pill">DCF</span><span class="pill">WACC 8.5%</span><span class="pill">Sensitivity</span><span class="pill">Excel</span><span class="pill">JP Morgan Forage</span>
+        <span class="pill">FCFF</span><span class="pill">Project IRR 12.6%</span><span class="pill">Sensitivity</span><span class="pill">Scenario Analysis</span><span class="pill">3-Statement</span>
       </div>
     </div>
 
+    <!-- 02 Hotel Royal -->
     <div class="proj rv d2">
       <div class="pn">02</div>
-      <div class="pbadge">Multi-Segment Valuation · India Accelerator</div>
-      <div class="ptitle">Vadodara Business Assessment — Consolidated Valuation</div>
-      <div class="pdesc">Consolidated valuation of India Accelerator's Vadodara operations across 7 segments: IA Fund (iAngel), Accelerator (Thesis &amp; Platform Equity), Co-Working Spaces, Startup Support Services, IA Media/Labs, and Innovation Studio.</div>
+      <div class="pbadge">Hospitality · Project Valuation</div>
+      <div class="ptitle">Hotel Royal — Feasibility & IRR Model</div>
+      <div class="pdesc">10-year project finance and DCF feasibility model for a Delhi NCR premium hotel development, benchmarked against real market data from 30+ comparable properties.</div>
+      <div class="pstat">
+        <div class="pstat-item">Method <strong>FCFF + TV</strong></div>
+        <div class="pstat-item">Horizon <strong>10 Years</strong></div>
+        <div class="pstat-item">Currency <strong>INR Mn</strong></div>
+        <div class="pstat-item">Sheets <strong>11</strong></div>
+      </div>
       <div class="pdid">
-        <strong>What I built:</strong> Segment-level DCF models with individual discount rates (IA Fund at 29% CoC), IRR-based exit projections at 30% target IRR, break-even analysis for co-working, unit economics per centre, and a consolidated roll-up across 23 model sheets. Total IA Fund NPV: ₹73,565 Lakhs.
+        <strong>What I built:</strong> Revenue model (ARR × occupancy ramp), full 3-statement financials, fixed asset schedule, loan profile with debt service, terminal value, project IRR, and Delhi NCR benchmarking against 30+ premium hotel comps (Taj, Marriott, ITC, Hyatt).
       </div>
       <div class="pmeta">
-        <span class="pill">Multi-Segment DCF</span><span class="pill">IRR 30%</span><span class="pill">Break-Even</span><span class="pill">Unit Economics</span><span class="pill">VC Fund Modelling</span>
+        <span class="pill">Hotel Revenue Model</span><span class="pill">ARR/Occupancy</span><span class="pill">Terminal Value</span><span class="pill">Market Comps</span><span class="pill">3-Statement</span>
       </div>
     </div>
 
+    <!-- 03 PepsiCo -->
     <div class="proj rv d3">
       <div class="pn">03</div>
-      <div class="pbadge">MIS Reporting · India Accelerator</div>
-      <div class="ptitle">Monthly Expense MIS — 8–9 Co-Working Centers</div>
-      <div class="pdesc">Designed and maintained monthly expense MIS covering 8–9 India Accelerator co-working locations, enabling real-time cost visibility and variance monitoring for senior management and expansion planning.</div>
+      <div class="pbadge">Equity Research · DCF Valuation</div>
+      <div class="ptitle">PepsiCo — Full DCF Equity Valuation</div>
+      <div class="pdesc">End-to-end DCF equity valuation of PepsiCo Inc. (NASDAQ: PEP) using actuals through Dec 2023, with 5-year FCFF projection and two terminal value methodologies.</div>
+      <div class="pstat">
+        <div class="pstat-item">Gordon: <strong>$119.9/share</strong></div>
+        <div class="pstat-item">Exit Multiple: <strong>$164.8/share</strong></div>
+        <div class="pstat-item">WACC <strong>7.04%</strong></div>
+        <div class="pstat-item">Sheets <strong>9</strong></div>
+      </div>
       <div class="pdid">
-        <strong>What I built:</strong> Location-wise cost heads, actuals vs. budget variance flags, cash flow summaries, and an Excel/Power BI dashboard surfacing EBITDA margins and OpEx trends per centre — directly informing location-level investment decisions.
+        <strong>What I built:</strong> Beta regression, WACC at 7.04%, mid-year discounting, Gordon Growth (LTGR 2.5%) and Exit Multiple (EV/EBITDA 14.4×) terminal values, two-way sensitivity table (WACC × growth/exit), equity bridge with net debt &amp; minorities, implied share price vs. market.
       </div>
       <div class="pmeta">
-        <span class="pill">MIS</span><span class="pill">Variance Analysis</span><span class="pill">Power BI</span><span class="pill">Excel</span>
+        <span class="pill">WACC 7.04%</span><span class="pill">Gordon Growth</span><span class="pill">Exit Multiple</span><span class="pill">Sensitivity Table</span><span class="pill">Equity Bridge</span>
       </div>
     </div>
 
+    <!-- 04 Real Estate -->
     <div class="proj rv d4">
       <div class="pn">04</div>
-      <div class="pbadge">Audit & Compliance · Arora Rahul & Co.</div>
-      <div class="ptitle">Statutory Audit & Tax Compliance — Multi-Client Portfolio</div>
-      <div class="pdesc">Two-year engagement at a Delhi CA firm — end-to-end tax compliance and audit support across a multi-industry client portfolio, including a listed company statutory audit under senior CA supervision.</div>
+      <div class="pbadge">Real Estate · Equity IRR Model</div>
+      <div class="ptitle">Residential Development — Equity IRR</div>
+      <div class="pdesc">Monthly cash flow model for a ₹900 Mn residential real estate development, tracking construction draws, phased sales revenue, debt mechanics, and equity returns.</div>
+      <div class="pstat">
+        <div class="pstat-item">Pre-tax IRR <strong>37.7%</strong></div>
+        <div class="pstat-item">Post-tax IRR <strong>26.4%</strong></div>
+        <div class="pstat-item">Hurdle <strong>24%</strong></div>
+        <div class="pstat-item">Sheets <strong>6</strong></div>
+      </div>
       <div class="pdid">
-        <strong>What I did:</strong> Filed ITRs, prepared &amp; filed GST returns, TDS reconciliation, vouching, ledger scrutiny, and coordinated financial data collection and compliance documentation across clients. Tools: Tally, Excel.
+        <strong>What I built:</strong> Monthly construction draw schedule, phased revenue from unit sales, debt drawdown and repayment mechanics (14% p.a. interest), equity IRR waterfall (pre-tax 37.7%, post-tax 26.4%) vs. 24% hurdle rate — project flagged as viable.
       </div>
       <div class="pmeta">
-        <span class="pill">ITR Filing</span><span class="pill">GST</span><span class="pill">TDS Recon</span><span class="pill">Statutory Audit</span><span class="pill">Tally</span>
+        <span class="pill">Equity IRR 37.7%</span><span class="pill">Monthly Cash Flows</span><span class="pill">Debt Schedule</span><span class="pill">IRR Waterfall</span><span class="pill">Real Estate</span>
+      </div>
+    </div>
+
+    <!-- 05 Airport -->
+    <div class="proj rv d5">
+      <div class="pn">05</div>
+      <div class="pbadge">Infrastructure · Airport Concession</div>
+      <div class="ptitle">Airport — Long-Term Concession Model</div>
+      <div class="pdesc">Comprehensive 30-year semi-annual financial model for an airport concession covering aeronautical and non-aeronautical revenue streams with full financial statements and valuation.</div>
+      <div class="pstat">
+        <div class="pstat-item">Frequency <strong>Semi-annual</strong></div>
+        <div class="pstat-item">Horizon <strong>30+ Years</strong></div>
+        <div class="pstat-item">Currency <strong>INR 000s</strong></div>
+        <div class="pstat-item">Sheets <strong>13</strong></div>
+      </div>
+      <div class="pdid">
+        <strong>What I built:</strong> Passenger throughput revenue build (aeronautical + retail/F&amp;B revenue share), escalation schedule, full 3-statement financials, debt and equity waterfall, tax computation, valuation module, and ratio analysis across 13 interconnected sheets.
+      </div>
+      <div class="pmeta">
+        <span class="pill">Airport Concession</span><span class="pill">Semi-Annual</span><span class="pill">3-Statement</span><span class="pill">Ratio Analysis</span><span class="pill">Valuation</span>
+      </div>
+    </div>
+
+    <!-- 06 ABC Co-working -->
+    <div class="proj rv d6">
+      <div class="pn">06</div>
+      <div class="pbadge">Co-working · Unit Economics</div>
+      <div class="ptitle">ABC Co-Working — Unit Economics Model</div>
+      <div class="pdesc">Monthly unit economics model for a 152-seat co-working centre at ₹9,000/seat/month, analysing occupancy ramp, contribution margins, and 5-year cash flow viability.</div>
+      <div class="pstat">
+        <div class="pstat-item">Seats <strong>152</strong></div>
+        <div class="pstat-item">Rate <strong>₹9,000/seat</strong></div>
+        <div class="pstat-item">Horizon <strong>5 Years (Monthly)</strong></div>
+        <div class="pstat-item">Escalation <strong>5% p.a.</strong></div>
+      </div>
+      <div class="pdid">
+        <strong>What I built:</strong> Worst-case occupancy ramp (0→75% by month 13), rental escalation (5% p.a.), security deposit flows, contribution margin 1 &amp; 2 analysis, total expenses vs. revenue breakeven, and 5-year monthly cash flow rollup — directly comparable to live models built during India Accelerator internship.
+      </div>
+      <div class="pmeta">
+        <span class="pill">Unit Economics</span><span class="pill">Break-even</span><span class="pill">Occupancy Ramp</span><span class="pill">Monthly Model</span><span class="pill">Co-working</span>
       </div>
     </div>
 
@@ -461,7 +549,6 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
       </div>
     </div>
 
-    <!-- ✅ FORMSPREE CONNECTED FORM -->
     <div class="cform rv d2">
       <div class="fg"><label class="fl">Name</label><input type="text" id="f-name" class="fi" placeholder="Your name" required></div>
       <div class="fg"><label class="fl">Email</label><input type="email" id="f-email" class="fi" placeholder="your@email.com" required></div>
@@ -469,7 +556,6 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
       <div id="form-msg" class="form-msg"></div>
       <button class="btn-p" id="submit-btn" onclick="submitForm(event)">Send Message</button>
     </div>
-
   </div>
 </section>
 
@@ -504,26 +590,22 @@ async function submitForm(e) {
   const name  = document.getElementById('f-name').value.trim();
   const email = document.getElementById('f-email').value.trim();
   const text  = document.getElementById('f-msg').value.trim();
-
   if (!name || !email || !text) {
     msg.className = 'form-msg error';
     msg.textContent = 'Please fill in all fields before sending.';
     return;
   }
-
   btn.textContent = 'Sending…';
   btn.style.opacity = '0.7';
   btn.style.pointerEvents = 'none';
   msg.className = 'form-msg';
   msg.textContent = '';
-
   try {
     const res = await fetch('https://formspree.io/f/xkopbgdz', {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, message: text })
     });
-
     if (res.ok) {
       msg.className = 'form-msg success';
       msg.textContent = '✓ Message sent! I\'ll get back to you soon.';
@@ -531,9 +613,7 @@ async function submitForm(e) {
       document.getElementById('f-email').value = '';
       document.getElementById('f-msg').value = '';
       btn.textContent = 'Sent ✓';
-    } else {
-      throw new Error('Server error');
-    }
+    } else { throw new Error('Server error'); }
   } catch {
     msg.className = 'form-msg error';
     msg.textContent = '✗ Something went wrong. Please email me directly.';
