@@ -10,7 +10,7 @@
 :root {
   --bg:#07090f;--bg2:#0b0f1a;--bg3:#101828;--surface:#131c2e;--surface2:#1a2540;
   --bd:rgba(88,166,255,.10);--bd2:rgba(88,166,255,.22);
-  --a1:#4f8ef7;--a2:#00c9a7;--a3:#f0a340;--a4:#e05cf0;--a5:#ff6b6b;--a6:#54d4ff;
+  --a1:#4f8ef7;--a2:#00c9a7;--a3:#f0a340;--a4:#e05cf0;--a5:#ff6b6b;--a6:#54d4ff;--a7:#a78bfa;
   --tx:#dde8f8;--tx2:#7d97bc;--tx3:#3d5470;
 }
 html{scroll-behavior:smooth;}
@@ -92,6 +92,7 @@ h1.hname span{color:transparent;-webkit-text-stroke:1px rgba(79,142,247,.55);}
 .sk:nth-child(1)::before,.sk:nth-child(4)::before{background:var(--a1);}
 .sk:nth-child(2)::before,.sk:nth-child(5)::before{background:var(--a2);}
 .sk:nth-child(3)::before,.sk:nth-child(6)::before{background:var(--a3);}
+.sk:nth-child(7)::before{background:var(--a7);}
 .sk-icon{font-size:22px;margin-bottom:18px;display:block;opacity:.8;}
 .sk-name{font-size:16px;font-weight:600;color:var(--tx);margin-bottom:10px;letter-spacing:-.01em;}
 .sk-desc{font-size:13px;color:var(--tx2);line-height:1.75;font-weight:300;}
@@ -104,8 +105,9 @@ h1.hname span{color:transparent;-webkit-text-stroke:1px rgba(79,142,247,.55);}
 .sk:nth-child(1) .skbf,.sk:nth-child(4) .skbf{background:var(--a1);}
 .sk:nth-child(2) .skbf,.sk:nth-child(5) .skbf{background:var(--a2);}
 .sk:nth-child(3) .skbf,.sk:nth-child(6) .skbf{background:var(--a3);}
+.sk:nth-child(7) .skbf{background:var(--a7);}
 
-/* PROJECTS — 3-col grid for 6 cards */
+/* PROJECTS — 3-col grid */
 #projects{padding:120px 64px;background:var(--bg);}
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:64px;}
 .proj{background:var(--surface);border:1px solid var(--bd);padding:36px 30px;position:relative;overflow:hidden;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));transition:all .35s;cursor:default;}
@@ -118,6 +120,7 @@ h1.hname span{color:transparent;-webkit-text-stroke:1px rgba(79,142,247,.55);}
 .proj:nth-child(4)::before{background:radial-gradient(ellipse at top left,rgba(224,92,240,.06) 0%,transparent 55%);}
 .proj:nth-child(5)::before{background:radial-gradient(ellipse at top left,rgba(255,107,107,.06) 0%,transparent 55%);}
 .proj:nth-child(6)::before{background:radial-gradient(ellipse at top left,rgba(84,212,255,.06) 0%,transparent 55%);}
+.proj:nth-child(7)::before{background:radial-gradient(ellipse at top left,rgba(167,139,250,.06) 0%,transparent 55%);}
 .pn{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;position:absolute;top:16px;right:22px;line-height:1;letter-spacing:-.04em;transition:color .35s;pointer-events:none;}
 .proj:nth-child(1) .pn{color:rgba(79,142,247,.07);}  .proj:nth-child(1):hover .pn{color:rgba(79,142,247,.14);}
 .proj:nth-child(2) .pn{color:rgba(0,201,167,.07);}   .proj:nth-child(2):hover .pn{color:rgba(0,201,167,.14);}
@@ -125,6 +128,7 @@ h1.hname span{color:transparent;-webkit-text-stroke:1px rgba(79,142,247,.55);}
 .proj:nth-child(4) .pn{color:rgba(224,92,240,.07);}  .proj:nth-child(4):hover .pn{color:rgba(224,92,240,.14);}
 .proj:nth-child(5) .pn{color:rgba(255,107,107,.07);} .proj:nth-child(5):hover .pn{color:rgba(255,107,107,.14);}
 .proj:nth-child(6) .pn{color:rgba(84,212,255,.07);}  .proj:nth-child(6):hover .pn{color:rgba(84,212,255,.14);}
+.proj:nth-child(7) .pn{color:rgba(167,139,250,.07);} .proj:nth-child(7):hover .pn{color:rgba(167,139,250,.14);}
 .pbadge{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:14px;}
 .proj:nth-child(1) .pbadge{color:var(--a1);}
 .proj:nth-child(2) .pbadge{color:var(--a2);}
@@ -132,6 +136,7 @@ h1.hname span{color:transparent;-webkit-text-stroke:1px rgba(79,142,247,.55);}
 .proj:nth-child(4) .pbadge{color:var(--a4);}
 .proj:nth-child(5) .pbadge{color:var(--a5);}
 .proj:nth-child(6) .pbadge{color:var(--a6);}
+.proj:nth-child(7) .pbadge{color:var(--a7);}
 .ptitle{font-size:17px;font-weight:600;color:var(--tx);letter-spacing:-.015em;line-height:1.25;margin-bottom:12px;}
 .pdesc{font-size:13px;color:var(--tx2);line-height:1.8;font-weight:300;}
 .pstat{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
@@ -144,6 +149,7 @@ h1.hname span{color:transparent;-webkit-text-stroke:1px rgba(79,142,247,.55);}
 .proj:nth-child(4) .pdid{background:rgba(224,92,240,.05);border-left:2px solid var(--a4);}
 .proj:nth-child(5) .pdid{background:rgba(255,107,107,.05);border-left:2px solid var(--a5);}
 .proj:nth-child(6) .pdid{background:rgba(84,212,255,.05);border-left:2px solid var(--a6);}
+.proj:nth-child(7) .pdid{background:rgba(167,139,250,.05);border-left:2px solid var(--a7);}
 .pdid strong{color:var(--tx);font-weight:500;}
 .pmeta{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--bd);}
 .pill{font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;background:var(--bg3);border:1px solid var(--bd);color:var(--tx3);}
@@ -188,7 +194,7 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
 /* REVEAL */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;}
 .rv.on{opacity:1;transform:none;}
-.d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}.d5{transition-delay:.48s}.d6{transition-delay:.58s}
+.d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}.d5{transition-delay:.48s}.d6{transition-delay:.58s}.d7{transition-delay:.68s}
 
 @media(max-width:1200px){.kpis{display:none;}.sg{grid-template-columns:repeat(2,1fr);}.pg{grid-template-columns:repeat(2,1fr);}.cgrid{grid-template-columns:1fr;gap:48px;}.tl{grid-template-columns:1fr;}}
 @media(max-width:700px){nav{padding:14px 22px;}.nav-links{gap:18px;}#hero,#experience,#skills,#projects,#certs,#contact{padding-left:22px;padding-right:22px;}.sg{grid-template-columns:1fr;}.pg{grid-template-columns:1fr;}.tl{padding-left:26px;}footer{padding:22px;flex-direction:column;gap:8px;text-align:center;}}
@@ -223,6 +229,7 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
     <span class="htag">DCF Valuation</span>
     <span class="htag">MIS Reporting</span>
     <span class="htag">Power BI</span>
+    <span class="htag">Tableau</span>
     <span class="htag">SQL</span>
     <span class="htag">VC Research</span>
   </div>
@@ -233,7 +240,7 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
   <div class="kpis">
     <div class="kpi"><div class="kv">2+</div><div class="kl">Years Exp.</div></div>
     <div class="kpi"><div class="kv">8–9</div><div class="kl">Centers MIS</div></div>
-    <div class="kpi"><div class="kv">6</div><div class="kl">Models Built</div></div>
+    <div class="kpi"><div class="kv">7</div><div class="kl">Models Built</div></div>
     <div class="kpi"><div class="kv">CA</div><div class="kl">Firm Trained</div></div>
   </div>
   <div class="scroll-hint"><div class="shl"></div>Scroll</div>
@@ -246,6 +253,7 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
     <div class="ti">DCF Valuation <em>///</em></div>
     <div class="ti">MIS Reporting <em>///</em></div>
     <div class="ti">Power BI <em>///</em></div>
+    <div class="ti">Tableau <em>///</em></div>
     <div class="ti">SQL <em>///</em></div>
     <div class="ti">VC &amp; M&amp;A Research <em>///</em></div>
     <div class="ti">Audit &amp; Taxation <em>///</em></div>
@@ -256,6 +264,7 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
     <div class="ti">DCF Valuation <em>///</em></div>
     <div class="ti">MIS Reporting <em>///</em></div>
     <div class="ti">Power BI <em>///</em></div>
+    <div class="ti">Tableau <em>///</em></div>
     <div class="ti">SQL <em>///</em></div>
     <div class="ti">VC &amp; M&amp;A Research <em>///</em></div>
     <div class="ti">Audit &amp; Taxation <em>///</em></div>
@@ -355,10 +364,18 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
       <div class="sk-tools"><span class="skt">GST</span><span class="skt">TDS Recon</span><span class="skt">Statutory Audit</span></div>
       <div class="skbar"><div class="skbl"><span>Proficiency</span><span>82%</span></div><div class="skbt"><div class="skbf" data-w="82"></div></div></div>
     </div>
+    <!-- NEW: Tableau -->
+    <div class="sk rv d1">
+      <span class="sk-icon">⬢</span>
+      <div class="sk-name">Tableau</div>
+      <div class="sk-desc">Interactive dashboards, calculated fields, LOD expressions, and blended data sources — translating financial and operational data into executive-ready visuals.</div>
+      <div class="sk-tools"><span class="skt">LOD Expressions</span><span class="skt">Blended Sources</span><span class="skt">Dashboards</span></div>
+      <div class="skbar"><div class="skbl"><span>Proficiency</span><span>76%</span></div><div class="skbt"><div class="skbf" data-w="76"></div></div></div>
+    </div>
   </div>
 </section>
 
-<!-- PROJECTS — 6 models -->
+<!-- PROJECTS — 7 models -->
 <section id="projects">
   <div class="rv">
     <div class="slabel">Work Samples</div>
@@ -486,6 +503,26 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
       </div>
     </div>
 
+    <!-- 07 Happy Hour Co — NEW -->
+    <div class="proj rv d7">
+      <div class="pn">07</div>
+      <div class="pbadge">IB Simulation · DCF &amp; M&amp;A Bid</div>
+      <div class="ptitle">Happy Hour Co — JP Morgan IB DCF &amp; Round 1 Bid</div>
+      <div class="pdesc">Full DCF valuation and Round 1 bid analysis for Happy Hour Co., completed as part of the JP Morgan Investment Banking Job Simulation (Forage). 10-year FCFF projection with perpetuity and exit multiple methodologies, WACC 8.5%, and a two-way sensitivity matrix.</div>
+      <div class="pstat">
+        <div class="pstat-item">WACC <strong>8.5%</strong></div>
+        <div class="pstat-item">g <strong>0.5%</strong></div>
+        <div class="pstat-item">Net Debt <strong>$84.6m</strong></div>
+        <div class="pstat-item">FCF Yr10 <strong>$70.9m</strong></div>
+      </div>
+      <div class="pdid">
+        <strong>What I built:</strong> 10-year unlevered FCF schedule (actuals FY2017–20 + estimates FY2021–30), WACC at 8.5%, perpetuity terminal value ($890.7m), PV of FCFs ($364.1m), equity bridge (EV − net debt of $84.6m → equity value), implied share price vs. 165p market price, and WACC × growth rate two-way sensitivity table.
+      </div>
+      <div class="pmeta">
+        <span class="pill">JP Morgan · Forage</span><span class="pill">WACC 8.5%</span><span class="pill">Perpetuity TV</span><span class="pill">Sensitivity Matrix</span><span class="pill">Equity Bridge</span><span class="pill">M&amp;A Bid</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -501,7 +538,7 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
       <div>
         <div class="cissuer">JP Morgan · Forage</div>
         <div class="cname">Investment Banking Job Simulation</div>
-        <div class="cdate">March 2026 · M&A target analysis, financial analysis &amp; investment recommendation</div>
+        <div class="cdate">March 2026 · M&amp;A target analysis, financial analysis &amp; investment recommendation</div>
       </div>
     </div>
     <div class="ccard rv d2">
@@ -512,8 +549,17 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
         <div class="cdate">3-Statement Modelling · DCF · Comparable Analysis</div>
       </div>
     </div>
+    <!-- NEW: Tutedude SQL Certificate -->
     <div class="ccard rv d3">
       <div class="cico">▣</div>
+      <div>
+        <div class="cissuer">Tutedude · Certificate ID: TD-SUJA-SQ-2011</div>
+        <div class="cname">SQL Course — Certificate of Completion</div>
+        <div class="cdate">Completed 04 April 2026 · Issued by Shivam Goyal &amp; Abhishek Gangwar, Co-Founders</div>
+      </div>
+    </div>
+    <div class="ccard rv d4">
+      <div class="cico">◻</div>
       <div>
         <div class="cissuer">Delhi University · SOL</div>
         <div class="cname">Bachelor of Commerce (B.Com)</div>
