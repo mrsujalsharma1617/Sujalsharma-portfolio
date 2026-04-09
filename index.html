@@ -10,7 +10,7 @@
 :root {
   --bg:#07090f;--bg2:#0b0f1a;--bg3:#101828;--surface:#131c2e;--surface2:#1a2540;
   --bd:rgba(88,166,255,.10);--bd2:rgba(88,166,255,.22);
-  --a1:#4f8ef7;--a2:#00c9a7;--a3:#f0a340;--a4:#e05cf0;--a5:#ff6b6b;--a6:#54d4ff;--a7:#a78bfa;
+  --a1:#4f8ef7;--a2:#00c9a7;--a3:#f0a340;--a4:#e05cf0;--a5:#ff6b6b;--a6:#54d4ff;--a7:#a78bfa;--a8:#38bdf8;
   --tx:#dde8f8;--tx2:#7d97bc;--tx3:#3d5470;
 }
 html{scroll-behavior:smooth;}
@@ -107,9 +107,39 @@ h1.hname span{color:transparent;-webkit-text-stroke:1px rgba(79,142,247,.55);}
 .sk:nth-child(3) .skbf,.sk:nth-child(6) .skbf{background:var(--a3);}
 .sk:nth-child(7) .skbf{background:var(--a7);}
 
-/* PROJECTS — 3-col grid */
+/* PROJECTS — grid */
 #projects{padding:120px 64px;background:var(--bg);}
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:64px;}
+
+/* Tableau featured card — spans full width */
+.proj-tableau-wrap{grid-column:1/-1;margin-bottom:4px;}
+.proj-tableau{background:var(--surface);border:1px solid rgba(56,189,248,.25);padding:36px 36px 0;position:relative;overflow:hidden;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));transition:all .35s;}
+.proj-tableau:hover{border-color:rgba(56,189,248,.45);transform:translateY(-3px);}
+.proj-tableau::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top left,rgba(56,189,248,.06) 0%,transparent 55%);opacity:0;transition:opacity .35s;}
+.proj-tableau:hover::before{opacity:1;}
+.proj-tableau-top{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:start;}
+.proj-tableau-meta{padding-bottom:36px;}
+.tableau-badge{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--a8);margin-bottom:14px;}
+.tableau-num{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;position:absolute;top:16px;right:22px;line-height:1;letter-spacing:-.04em;color:rgba(56,189,248,.07);transition:color .35s;pointer-events:none;}
+.proj-tableau:hover .tableau-num{color:rgba(56,189,248,.14);}
+.tableau-title{font-size:20px;font-weight:600;color:var(--tx);letter-spacing:-.015em;line-height:1.25;margin-bottom:12px;}
+.tableau-desc{font-size:13px;color:var(--tx2);line-height:1.8;font-weight:300;max-width:680px;}
+.tableau-stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.tableau-stat{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--tx3);padding:4px 10px;background:var(--bg3);border:1px solid var(--bd);}
+.tableau-stat strong{color:var(--tx2);}
+.tableau-did{margin-top:16px;padding:12px 14px;font-size:12px;color:var(--tx2);line-height:1.7;background:rgba(56,189,248,.05);border-left:2px solid var(--a8);}
+.tableau-did strong{color:var(--tx);font-weight:500;}
+.tableau-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--bd);padding-bottom:36px;}
+.pill{font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;background:var(--bg3);border:1px solid var(--bd);color:var(--tx3);}
+/* Tableau embed */
+.tableau-embed-panel{width:360px;flex-shrink:0;background:var(--bg3);border:1px solid var(--bd);overflow:hidden;position:relative;border-radius:2px;}
+.tableau-embed-panel iframe{display:block;width:100%;height:260px;border:none;}
+.tableau-embed-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);padding:8px 12px;display:flex;align-items:center;gap:8px;border-top:1px solid var(--bd);}
+.tableau-embed-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--a8);display:inline-block;animation:blink 2.2s ease-in-out infinite;}
+.tableau-live-btn{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:10px 22px;background:rgba(56,189,248,.10);border:1px solid rgba(56,189,248,.35);color:var(--a8);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .3s;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));}
+.tableau-live-btn:hover{background:rgba(56,189,248,.18);border-color:var(--a8);color:#fff;}
+.tableau-live-btn svg{width:13px;height:13px;fill:currentColor;}
+
 .proj{background:var(--surface);border:1px solid var(--bd);padding:36px 30px;position:relative;overflow:hidden;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));transition:all .35s;cursor:default;}
 .proj:hover{border-color:var(--bd2);transform:translateY(-4px);}
 .proj::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .35s;}
@@ -152,7 +182,6 @@ h1.hname span{color:transparent;-webkit-text-stroke:1px rgba(79,142,247,.55);}
 .proj:nth-child(7) .pdid{background:rgba(167,139,250,.05);border-left:2px solid var(--a7);}
 .pdid strong{color:var(--tx);font-weight:500;}
 .pmeta{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--bd);}
-.pill{font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;background:var(--bg3);border:1px solid var(--bd);color:var(--tx3);}
 
 /* CERTS */
 #certs{padding:80px 64px;background:var(--bg2);}
@@ -163,6 +192,11 @@ h1.hname span{color:transparent;-webkit-text-stroke:1px rgba(79,142,247,.55);}
 .cissuer{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--a1);margin-bottom:6px;font-weight:500;}
 .cname{font-size:14px;font-weight:500;color:var(--tx);line-height:1.3;margin-bottom:4px;}
 .cdate{font-size:11px;color:var(--tx3);}
+/* Tableau cert highlight */
+.ccard-tableau{border-color:rgba(56,189,248,.2)!important;}
+.ccard-tableau:hover{border-color:rgba(56,189,248,.45)!important;}
+.ccard-tableau .cissuer{color:var(--a8);}
+.ccard-tableau .cico{border-color:rgba(56,189,248,.35);}
 
 /* CONTACT */
 #contact{padding:120px 64px;background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);position:relative;overflow:hidden;}
@@ -196,7 +230,7 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
 .rv.on{opacity:1;transform:none;}
 .d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}.d5{transition-delay:.48s}.d6{transition-delay:.58s}.d7{transition-delay:.68s}
 
-@media(max-width:1200px){.kpis{display:none;}.sg{grid-template-columns:repeat(2,1fr);}.pg{grid-template-columns:repeat(2,1fr);}.cgrid{grid-template-columns:1fr;gap:48px;}.tl{grid-template-columns:1fr;}}
+@media(max-width:1200px){.kpis{display:none;}.sg{grid-template-columns:repeat(2,1fr);}.pg{grid-template-columns:repeat(2,1fr);}.cgrid{grid-template-columns:1fr;gap:48px;}.tl{grid-template-columns:1fr;}.proj-tableau-top{grid-template-columns:1fr;}.tableau-embed-panel{width:100%;}}
 @media(max-width:700px){nav{padding:14px 22px;}.nav-links{gap:18px;}#hero,#experience,#skills,#projects,#certs,#contact{padding-left:22px;padding-right:22px;}.sg{grid-template-columns:1fr;}.pg{grid-template-columns:1fr;}.tl{padding-left:26px;}footer{padding:22px;flex-direction:column;gap:8px;text-align:center;}}
 </style>
 </head>
@@ -240,7 +274,7 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
   <div class="kpis">
     <div class="kpi"><div class="kv">2+</div><div class="kl">Years Exp.</div></div>
     <div class="kpi"><div class="kv">8–9</div><div class="kl">Centers MIS</div></div>
-    <div class="kpi"><div class="kv">7</div><div class="kl">Models Built</div></div>
+    <div class="kpi"><div class="kv">8</div><div class="kl">Models Built</div></div>
     <div class="kpi"><div class="kv">CA</div><div class="kl">Firm Trained</div></div>
   </div>
   <div class="scroll-hint"><div class="shl"></div>Scroll</div>
@@ -364,7 +398,6 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
       <div class="sk-tools"><span class="skt">GST</span><span class="skt">TDS Recon</span><span class="skt">Statutory Audit</span></div>
       <div class="skbar"><div class="skbl"><span>Proficiency</span><span>82%</span></div><div class="skbt"><div class="skbf" data-w="82"></div></div></div>
     </div>
-    <!-- NEW: Tableau -->
     <div class="sk rv d1">
       <span class="sk-icon">⬢</span>
       <div class="sk-name">Tableau</div>
@@ -375,13 +408,54 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
   </div>
 </section>
 
-<!-- PROJECTS — 7 models -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="rv">
     <div class="slabel">Work Samples</div>
-    <h2 class="stitle">Financial Models</h2>
+    <h2 class="stitle">Financial Models & Dashboards</h2>
   </div>
   <div class="pg">
+
+    <!-- TABLEAU FEATURED — full width -->
+    <div class="proj-tableau-wrap rv d1">
+      <div class="proj-tableau">
+        <div class="tableau-num">08</div>
+        <div class="proj-tableau-top">
+          <div class="proj-tableau-meta">
+            <div class="tableau-badge">⬢ Tableau · Data Visualisation · Live Dashboard</div>
+            <div class="tableau-title">HDFC Bank Stock Performance Analysis (2000–2021)</div>
+            <div class="tableau-desc">Interactive Tableau dashboard analysing 21 years of HDFC Bank stock data — covering returns, trading volume, and price trends across bull/bear cycles. Built using blended data sources with LOD expressions for period-level aggregations and custom calculated fields for return metrics.</div>
+            <div class="tableau-stats">
+              <div class="tableau-stat">Coverage <strong>2000–2021</strong></div>
+              <div class="tableau-stat">Tool <strong>Tableau Public</strong></div>
+              <div class="tableau-stat">Views <strong>Returns · Volume · Price</strong></div>
+              <div class="tableau-stat">Type <strong>Interactive</strong></div>
+            </div>
+            <div class="tableau-did">
+              <strong>What I built:</strong> Multi-view dashboard with annual return % bars, volume trend lines, price movement area charts, and period-over-period comparison filters. Applied LOD expressions for YoY calculations, blended NSE data sources, and custom colour encoding for positive/negative return periods.
+            </div>
+            <div class="tableau-pills">
+              <span class="pill">Tableau Public</span><span class="pill">LOD Expressions</span><span class="pill">Stock Analysis</span><span class="pill">Return Metrics</span><span class="pill">Volume Trends</span><span class="pill">HDFC Bank</span>
+            </div>
+            <a href="https://public.tableau.com/views/HDFCBankStockPerformanceAnalysis20002021-ReturnsVolumePriceTrends/HDFCbank?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="tableau-live-btn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+              View Live on Tableau Public
+            </a>
+          </div>
+          <!-- Tableau embed panel -->
+          <div class="tableau-embed-panel">
+            <div id="tableau-viz-container" style="width:100%;height:260px;overflow:hidden;position:relative;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
+              <div id="tableau-loading" style="text-align:center;padding:20px;">
+                <div style="font-size:28px;margin-bottom:12px;opacity:.4;">⬢</div>
+                <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);margin-bottom:16px;">Loading dashboard…</div>
+                <a href="https://public.tableau.com/views/HDFCBankStockPerformanceAnalysis20002021-ReturnsVolumePriceTrends/HDFCbank?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--a8);text-decoration:none;border:1px solid rgba(56,189,248,.3);padding:7px 14px;display:inline-block;">Open in Tableau →</a>
+              </div>
+            </div>
+            <div class="tableau-embed-label">Live · Tableau Public · HDFC Bank 2000–2021</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- 01 Toll Road -->
     <div class="proj rv d1">
@@ -503,7 +577,7 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
       </div>
     </div>
 
-    <!-- 07 Happy Hour Co — NEW -->
+    <!-- 07 Happy Hour Co -->
     <div class="proj rv d7">
       <div class="pn">07</div>
       <div class="pbadge">IB Simulation · DCF &amp; M&amp;A Bid</div>
@@ -549,7 +623,6 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
         <div class="cdate">3-Statement Modelling · DCF · Comparable Analysis</div>
       </div>
     </div>
-    <!-- NEW: Tutedude SQL Certificate -->
     <div class="ccard rv d3">
       <div class="cico">▣</div>
       <div>
@@ -558,7 +631,16 @@ footer{padding:28px 64px;border-top:1px solid var(--bd);display:flex;justify-con
         <div class="cdate">Completed 04 April 2026 · Issued by Shivam Goyal &amp; Abhishek Gangwar, Co-Founders</div>
       </div>
     </div>
-    <div class="ccard rv d4">
+    <!-- NEW: Tableau Certificate -->
+    <div class="ccard ccard-tableau rv d4">
+      <div class="cico">⬢</div>
+      <div>
+        <div class="cissuer">Tutedude · Certificate ID: TD-SUJA-TB-2130</div>
+        <div class="cname">Tableau Course — Certificate of Completion</div>
+        <div class="cdate">Completed 08 April 2026 · Issued by Shivam Goyal &amp; Abhishek Gangwar, Co-Founders</div>
+      </div>
+    </div>
+    <div class="ccard rv d5" style="flex-basis:100%;max-width:320px;">
       <div class="cico">◻</div>
       <div>
         <div class="cissuer">Delhi University · SOL</div>
@@ -627,6 +709,66 @@ document.querySelectorAll('.sk').forEach(el=>bobs.observe(el));
 
 /* ── Nav scroll ── */
 window.addEventListener('scroll',()=>{document.getElementById('nav').style.background=window.scrollY>60?'rgba(7,9,15,.96)':'rgba(7,9,15,.88)';});
+
+/* ── Tableau embed attempt ── */
+(function() {
+  const container = document.getElementById('tableau-viz-container');
+  const loadingEl = document.getElementById('tableau-loading');
+  const tableauUrl = 'https://public.tableau.com/views/HDFCBankStockPerformanceAnalysis20002021-ReturnsVolumePriceTrends/HDFCbank';
+
+  // Try loading Tableau JS API for embed
+  const script = document.createElement('script');
+  script.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  script.onload = function() {
+    try {
+      container.innerHTML = '';
+      const divEl = document.createElement('div');
+      divEl.className = 'tableauPlaceholder';
+      divEl.style.cssText = 'width:100%;height:260px;';
+      const objEl = document.createElement('object');
+      objEl.className = 'tableauViz';
+      objEl.style.cssText = 'display:none;';
+      const p1 = document.createElement('param');
+      p1.name = 'host_url'; p1.value = 'https%3A%2F%2Fpublic.tableau.com%2F';
+      const p2 = document.createElement('param');
+      p2.name = 'embed_code_version'; p2.value = '3';
+      const p3 = document.createElement('param');
+      p3.name = 'name'; p3.value = 'HDFCBankStockPerformanceAnalysis20002021-ReturnsVolumePriceTrends/HDFCbank';
+      const p4 = document.createElement('param');
+      p4.name = 'tabs'; p4.value = 'no';
+      const p5 = document.createElement('param');
+      p5.name = 'toolbar'; p5.value = 'yes';
+      const p6 = document.createElement('param');
+      p6.name = 'animate_transition'; p6.value = 'yes';
+      const p7 = document.createElement('param');
+      p7.name = 'display_count'; p7.value = 'yes';
+      const p8 = document.createElement('param');
+      p8.name = 'language'; p8.value = 'en-US';
+      [p1,p2,p3,p4,p5,p6,p7,p8].forEach(p=>objEl.appendChild(p));
+      divEl.appendChild(objEl);
+      container.appendChild(divEl);
+      container.style.cssText = 'width:100%;height:260px;overflow:hidden;';
+    } catch(err) {
+      showFallback();
+    }
+  };
+  script.onerror = showFallback;
+  document.head.appendChild(script);
+
+  function showFallback() {
+    loadingEl.innerHTML = `
+      <div style="font-size:28px;margin-bottom:12px;opacity:.4;">⬢</div>
+      <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);margin-bottom:16px;">Preview on Tableau Public</div>
+      <a href="${tableauUrl}?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank"
+         style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--a8);text-decoration:none;border:1px solid rgba(56,189,248,.3);padding:7px 14px;display:inline-block;">
+        Open Dashboard →
+      </a>`;
+    container.style.display = 'flex';
+    container.style.alignItems = 'center';
+    container.style.justifyContent = 'center';
+    loadingEl.style.display = 'block';
+  }
+})();
 
 /* ── Formspree submit ── */
 async function submitForm(e) {
