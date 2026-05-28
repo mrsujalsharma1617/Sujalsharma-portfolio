@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +16,9 @@ a{color:inherit}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 72px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);background:rgba(6,8,16,.88);backdrop-filter:blur(20px)}
 .logo{font-family:var(--f-serif);font-style:italic;font-size:26px;color:var(--blue);text-decoration:none;font-weight:700}
 .nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{color:var(--fg2);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.nav-links a{color:var(--fg2);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
 .nav-links a:hover{color:var(--fg)}
-.nav-cta{padding:9px 22px;border:1px solid var(--line2);color:var(--blue);font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-decoration:none;text-transform:uppercase}
+.nav-cta{padding:9px 22px;border:1px solid var(--line2);color:var(--blue);font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;cursor:pointer}
 section{position:relative;z-index:1}
 .wrap{padding:120px 72px}
 .label-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
@@ -45,9 +44,9 @@ h1.hname .glow{color:var(--fg)}
 .h-tag,.chip{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border:1px solid var(--line2);color:var(--fg3)}
 .chip{font-size:9px;padding:3px 8px}
 .h-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:44px}
-.btn-solid,.btn-ghost{padding:13px 32px;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .28s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
-.btn-solid{background:var(--blue);color:#fff}
-.btn-ghost{border:1px solid var(--line2);color:var(--fg2)}
+.btn-solid,.btn-ghost{padding:13px 32px;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .28s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));cursor:pointer}
+.btn-solid{background:var(--blue);color:#fff;border:none}
+.btn-ghost{border:1px solid var(--line2);color:var(--fg2);background:transparent}
 .btn-solid:hover{background:#6ba4ff;transform:translateY(-2px)}
 .btn-ghost:hover{color:var(--fg);border-color:var(--blue)}
 .ticker-wrap{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;background:var(--deep);position:relative;z-index:1}
@@ -168,18 +167,18 @@ footer{padding:24px 72px;border-top:1px solid var(--line);display:flex;justify-c
 </head>
 <body>
 <nav id="nav">
-  <a href="#" class="logo">SS</a>
+  <a href="#hero" class="logo" onclick="smoothScroll(event,'hero')">SS</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#automation">Automation</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#certs">Certs</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" onclick="smoothScroll(event,'about')">About</a></li>
+    <li><a href="#experience" onclick="smoothScroll(event,'experience')">Experience</a></li>
+    <li><a href="#skills" onclick="smoothScroll(event,'skills')">Skills</a></li>
+    <li><a href="#projects" onclick="smoothScroll(event,'projects')">Projects</a></li>
+    <li><a href="#automation" onclick="smoothScroll(event,'automation')">Automation</a></li>
+    <li><a href="#research" onclick="smoothScroll(event,'research')">Research</a></li>
+    <li><a href="#certs" onclick="smoothScroll(event,'certs')">Certs</a></li>
+    <li><a href="#contact" onclick="smoothScroll(event,'contact')">Contact</a></li>
   </ul>
-  <a href="mailto:Mr.sujalsharma1617@gmail.com" class="nav-cta">Hire Me -></a>
+  <a href="#contact" onclick="smoothScroll(event,'contact')" class="nav-cta">Hire Me -></a>
 </nav>
 
 <section id="hero">
@@ -190,12 +189,15 @@ footer{padding:24px 72px;border-top:1px solid var(--line);display:flex;justify-c
   <div class="h-tags">
     <span class="h-tag">Excel VBA</span><span class="h-tag">Google Apps Script</span><span class="h-tag">Power BI</span><span class="h-tag">SQL</span><span class="h-tag">Tableau</span><span class="h-tag">Prompt Engineering</span><span class="h-tag">3-Statement Modelling</span><span class="h-tag">DCF Valuation</span>
   </div>
-  <div class="h-cta"><a href="#projects" class="btn-solid">View Projects</a><a href="mailto:Mr.sujalsharma1617@gmail.com" class="btn-ghost">Get In Touch</a></div>
+  <div class="h-cta">
+    <a href="#projects" onclick="smoothScroll(event,'projects')" class="btn-solid">View Projects</a>
+    <a href="#contact" onclick="smoothScroll(event,'contact')" class="btn-ghost">Get In Touch</a>
+  </div>
 </section>
 
 <div class="ticker-wrap"><div class="ticker">
-  <div class="tick-item">Financial Modelling <em>///</em></div><div class="tick-item">Excel VBA Automation <em>///</em></div><div class="tick-item">Prompt Engineering <em>///</em></div><div class="tick-item">DCF Valuation <em>///</em></div><div class="tick-item">Google Apps Script <em>///</em></div><div class="tick-item">MIS Reporting <em>///</em></div><div class="tick-item">Power BI DAX <em>///</em></div><div class="tick-item">Tableau <em>///</em></div><div class="tick-item">SQL <em>///</em></div><div class="tick-item">AI Agents & Workflows <em>///</em></div>
-  <div class="tick-item">Financial Modelling <em>///</em></div><div class="tick-item">Excel VBA Automation <em>///</em></div><div class="tick-item">Prompt Engineering <em>///</em></div><div class="tick-item">DCF Valuation <em>///</em></div><div class="tick-item">Google Apps Script <em>///</em></div><div class="tick-item">MIS Reporting <em>///</em></div><div class="tick-item">Power BI DAX <em>///</em></div><div class="tick-item">Tableau <em>///</em></div><div class="tick-item">SQL <em>///</em></div><div class="tick-item">AI Agents & Workflows <em>///</em></div>
+  <div class="tick-item">Financial Modelling <em>///</em></div><div class="tick-item">Excel VBA Automation <em>///</em></div><div class="tick-item">Prompt Engineering <em>///</em></div><div class="tick-item">DCF Valuation <em>///</em></div><div class="tick-item">Google Apps Script <em>///</em></div><div class="tick-item">MIS Reporting <em>///</em></div><div class="tick-item">Power BI DAX <em>///</em></div><div class="tick-item">Tableau <em>///</em></div><div class="tick-item">SQL <em>///</em></div><div class="tick-item">AI Agents &amp; Workflows <em>///</em></div>
+  <div class="tick-item">Financial Modelling <em>///</em></div><div class="tick-item">Excel VBA Automation <em>///</em></div><div class="tick-item">Prompt Engineering <em>///</em></div><div class="tick-item">DCF Valuation <em>///</em></div><div class="tick-item">Google Apps Script <em>///</em></div><div class="tick-item">MIS Reporting <em>///</em></div><div class="tick-item">Power BI DAX <em>///</em></div><div class="tick-item">Tableau <em>///</em></div><div class="tick-item">SQL <em>///</em></div><div class="tick-item">AI Agents &amp; Workflows <em>///</em></div>
 </div></div>
 
 <section id="about"><div class="wrap">
@@ -204,10 +206,10 @@ footer{padding:24px 72px;border-top:1px solid var(--line);display:flex;justify-c
     <div class="about-text rv d1">
       <p>I'm a final-year B.Com student at Delhi University with a clear mission: <strong>make finance faster, smarter, and more insightful</strong> through automation and AI.</p>
       <p>My journey began in a CA firm, where I spent two years learning audit, taxation, and compliance through hands-on client work. That experience gave me a strong foundation in what financial data actually means.</p>
-      <p>At India Accelerator, I built financial models used by senior management, tracked MIS across co-working centres, and supported investment and M&A research.</p>
+      <p>At India Accelerator, I built financial models used by senior management, tracked MIS across co-working centres, and supported investment and M&amp;A research.</p>
     </div>
     <div class="about-highlights rv d2">
-      <div class="ah"><div class="ah-label">Current Focus</div><div class="ah-val">AI-powered finance automation & analyst roles</div></div>
+      <div class="ah"><div class="ah-label">Current Focus</div><div class="ah-val">AI-powered finance automation &amp; analyst roles</div></div>
       <div class="ah"><div class="ah-label">Education</div><div class="ah-val">B.Com &middot; Delhi University &middot; Graduating Jun 2026</div></div>
       <div class="ah"><div class="ah-label">Key Strengths</div><div class="ah-val">Financial modelling &middot; VBA automation &middot; AI tools &middot; Data storytelling</div></div>
       <div class="ah"><div class="ah-label">Career Goal</div><div class="ah-val">Finance Analyst bridging spreadsheets with AI intelligence</div></div>
@@ -218,8 +220,8 @@ footer{padding:24px 72px;border-top:1px solid var(--line);display:flex;justify-c
 <section id="experience"><div class="wrap">
   <div class="rv"><div class="label-row" style="color:var(--teal)"><span class="label">Work History</span></div><h2 class="sec-title">Experience</h2></div>
   <div class="timeline">
-    <div class="tl rv d1"><div><div class="tl-date">May 2025 - Oct 2025</div><div class="tl-co">India Accelerator &middot; Gurugram</div></div><div><div class="tl-role">Account & Finance Associate Intern</div><ul class="tl-list"><li>Tracked monthly expense MIS for 8-9 co-working centres, enabling accurate cost monitoring across locations.</li><li>Built 3-statement models covering revenue, expenses, break-even and IRR for expansion decisions.</li><li>Supported budgeting, variance analysis, cash flow tracking and investment research.</li></ul></div></div>
-    <div class="tl rv d2"><div><div class="tl-date">Apr 2023 - Mar 2025</div><div class="tl-co">Arora Rahul & Co. &middot; Delhi</div></div><div><div class="tl-role">Audit Associate Intern</div><ul class="tl-list"><li>Filed ITRs, prepared GST returns and handled TDS reconciliation for a multi-industry client portfolio.</li><li>Assisted in statutory and internal audits, including a listed company engagement.</li><li>Worked on ledger reconciliation, vouching, scrutiny and compliance documentation.</li></ul></div></div>
+    <div class="tl rv d1"><div><div class="tl-date">May 2025 - Oct 2025</div><div class="tl-co">India Accelerator &middot; Gurugram</div></div><div><div class="tl-role">Account &amp; Finance Associate Intern</div><ul class="tl-list"><li>Tracked monthly expense MIS for 8-9 co-working centres, enabling accurate cost monitoring across locations.</li><li>Built 3-statement models covering revenue, expenses, break-even and IRR for expansion decisions.</li><li>Supported budgeting, variance analysis, cash flow tracking and investment research.</li></ul></div></div>
+    <div class="tl rv d2"><div><div class="tl-date">Apr 2023 - Mar 2025</div><div class="tl-co">Arora Rahul &amp; Co. &middot; Delhi</div></div><div><div class="tl-role">Audit Associate Intern</div><ul class="tl-list"><li>Filed ITRs, prepared GST returns and handled TDS reconciliation for a multi-industry client portfolio.</li><li>Assisted in statutory and internal audits, including a listed company engagement.</li><li>Worked on ledger reconciliation, vouching, scrutiny and compliance documentation.</li></ul></div></div>
   </div>
 </div></section>
 
@@ -229,9 +231,9 @@ footer{padding:24px 72px;border-top:1px solid var(--line);display:flex;justify-c
     <div class="sk c1 rv d1"><span class="sk-ico">&#9671;</span><div class="sk-name">Financial Modelling</div><div class="sk-desc">3-statement models, DCF valuation, trading comps, break-even analysis and IRR.</div><div class="sk-chips"><span class="chip">3-Statement</span><span class="chip">DCF</span><span class="chip">Trading Comps</span><span class="chip">IRR</span></div></div>
     <div class="sk c2 rv d2"><span class="sk-ico">&#9673;</span><div class="sk-name">Excel VBA Automation</div><div class="sk-desc">Macros across Excel, Word and PowerPoint for report formatting, data consolidation and presentation generation.</div><div class="sk-chips"><span class="chip">VBA</span><span class="chip">Macros</span><span class="chip">UserForms</span></div></div>
     <div class="sk c3 rv d3"><span class="sk-ico">&#11041;</span><div class="sk-name">AI for Finance</div><div class="sk-desc">Certified CA Monk Level 1. Prompt engineering, AI agents, NotebookLM analysis and AI-assisted workflows.</div><div class="sk-chips"><span class="chip">Prompt Eng.</span><span class="chip">AI Agents</span><span class="chip">NotebookLM</span></div></div>
-    <div class="sk c4 rv d1"><span class="sk-ico">&#9635;</span><div class="sk-name">Power BI & Tableau</div><div class="sk-desc">Interactive dashboards with DAX measures, Tableau LOD calculations and stock performance analysis.</div><div class="sk-chips"><span class="chip">DAX</span><span class="chip">Tableau</span><span class="chip">LOD</span></div></div>
-    <div class="sk c5 rv d2"><span class="sk-ico">&#9671;</span><div class="sk-name">SQL & Data Analysis</div><div class="sk-desc">Joins, CTEs, window functions and aggregations applied to financial datasets.</div><div class="sk-chips"><span class="chip">Window Fns</span><span class="chip">CTEs</span><span class="chip">Joins</span></div></div>
-    <div class="sk c6 rv d3"><span class="sk-ico">&#9633;</span><div class="sk-name">Audit & Tax Compliance</div><div class="sk-desc">ITR, GST, TDS reconciliation, statutory audit, internal audit and ledger scrutiny.</div><div class="sk-chips"><span class="chip">GST</span><span class="chip">TDS</span><span class="chip">Audit</span></div></div>
+    <div class="sk c4 rv d1"><span class="sk-ico">&#9635;</span><div class="sk-name">Power BI &amp; Tableau</div><div class="sk-desc">Interactive dashboards with DAX measures, Tableau LOD calculations and stock performance analysis.</div><div class="sk-chips"><span class="chip">DAX</span><span class="chip">Tableau</span><span class="chip">LOD</span></div></div>
+    <div class="sk c5 rv d2"><span class="sk-ico">&#9671;</span><div class="sk-name">SQL &amp; Data Analysis</div><div class="sk-desc">Joins, CTEs, window functions and aggregations applied to financial datasets.</div><div class="sk-chips"><span class="chip">Window Fns</span><span class="chip">CTEs</span><span class="chip">Joins</span></div></div>
+    <div class="sk c6 rv d3"><span class="sk-ico">&#9633;</span><div class="sk-name">Audit &amp; Tax Compliance</div><div class="sk-desc">ITR, GST, TDS reconciliation, statutory audit, internal audit and ledger scrutiny.</div><div class="sk-chips"><span class="chip">GST</span><span class="chip">TDS</span><span class="chip">Audit</span></div></div>
   </div>
 </div></section>
 
@@ -250,7 +252,7 @@ footer{padding:24px 72px;border-top:1px solid var(--line);display:flex;justify-c
 
     <div class="pc col-violet rv d2"><span class="pc-num">04</span><div class="pc-badge">Financial Model &middot; Airport</div><div class="pc-title">Airport Assessment Model</div><div class="pc-desc">Built an airport assessment workbook for analysing operational and financial assumptions in a structured case-study format, supporting investment-style review and scenario thinking.</div><div class="pc-impact"><strong>Use Case:</strong> Converts commercial assumptions into a model that can support feasibility review, scenario comparison and management discussion.</div><div class="pc-stats"><div class="pc-stat">Focus: <strong>Assessment</strong></div><div class="pc-stat">Format: <strong>Excel Model</strong></div></div><div class="pc-chips"><span class="chip">Scenario Analysis</span><span class="chip">Operating Assumptions</span><span class="chip">Feasibility</span><span class="chip">Excel</span></div><div class="model-note">Excel model showcased in portfolio</div></div>
 
-    <div class="project-head col-blue rv d1"><div class="project-kicker">AI, Dashboards & Research</div><h3 class="project-heading">Finance automation and research projects</h3><p class="project-note">AI-assisted research tools, dashboards and automation workflows that show how finance analysis can be made faster, clearer and more repeatable.</p></div>
+    <div class="project-head col-blue rv d1"><div class="project-kicker">AI, Dashboards &amp; Research</div><h3 class="project-heading">Finance automation and research projects</h3><p class="project-note">AI-assisted research tools, dashboards and automation workflows that show how finance analysis can be made faster, clearer and more repeatable.</p></div>
 
     <div class="proj-featured rv d1"><div class="pf col-blue"><span class="pf-num">05</span><div class="pf-badge">AI-Powered Research &middot; Banking</div><div class="pf-title">HDFC Bank Research Report</div><div class="pf-desc">A comprehensive equity research report on HDFC Bank built using AI tools, covering business overview, segment-wise financial analysis, ratio trends and market return insights.</div><div class="pf-insight"><strong>Analyst Insight:</strong> Demonstrates how AI can support structured research, ratio interpretation and narrative synthesis for finance audiences.</div><div class="pf-meta"><div class="pf-meta-item">Coverage: <strong>Business + Financials</strong></div><div class="pf-meta-item">Format: <strong>Live Web Report</strong></div></div><div class="pf-chips"><span class="chip">ChatGPT</span><span class="chip">Prompt Engineering</span><span class="chip">Financial Ratios</span><span class="chip">Equity Research</span></div><a href="https://hdfc-research-kbxydjmh.manus.space/?code=8mGRU2e9ScMPr9vrhJ6S7B" target="_blank" class="pf-link">View Live Report -></a></div></div>
 
@@ -266,15 +268,15 @@ footer{padding:24px 72px;border-top:1px solid var(--line);display:flex;justify-c
     <div class="auto-card rv d1"><div class="auto-icon">&#9881;</div><div class="auto-type">Excel VBA &middot; Report Automation</div><div class="auto-name">Working File Automation</div><div class="auto-problem">Automated data pull, formatting and report generation for recurring finance reporting.</div><div class="auto-chips"><span class="chip">Excel VBA</span><span class="chip">Macros</span><span class="chip">Reporting</span></div><div class="auto-outcome"><div class="auto-outcome-label">Outcome</div><div class="auto-outcome-val">Reduced a 2-day manual task to a single button click.</div></div></div>
     <div class="auto-card rv d2"><div class="auto-icon">&#9635;</div><div class="auto-type">Excel VBA &middot; Asset Management</div><div class="auto-name">Fixed Asset Register Macro</div><div class="auto-problem">Automated additions, disposals and depreciation calculations across asset categories.</div><div class="auto-chips"><span class="chip">Excel VBA</span><span class="chip">Depreciation</span><span class="chip">Dynamic Tables</span></div><div class="auto-outcome"><div class="auto-outcome-label">Outcome</div><div class="auto-outcome-val">Eliminated manual formula maintenance and reconciliation errors.</div></div></div>
     <div class="auto-card rv d3"><div class="auto-icon">&#8644;</div><div class="auto-type">Excel VBA &middot; Reconciliation</div><div class="auto-name">GL vs VL Reconciliation Automation</div><div class="auto-problem">Auto-matches General Ledger and Vendor Ledger entries, highlighting unmatched items.</div><div class="auto-chips"><span class="chip">Excel VBA</span><span class="chip">Exception Flags</span><span class="chip">Reconciliation</span></div><div class="auto-outcome"><div class="auto-outcome-label">Outcome</div><div class="auto-outcome-val">Period-close reconciliation time reduced by approximately 80%.</div></div></div>
-    <div class="auto-card rv d4"><div class="auto-icon">&#9993;</div><div class="auto-type">Google Apps Script &middot; Communication</div><div class="auto-name">Invoice & Payment Reminder Automation</div><div class="auto-problem">Automated scheduled payment reminders and confirmations using Google Sheets and Gmail.</div><div class="auto-chips"><span class="chip">Apps Script</span><span class="chip">Google Sheets</span><span class="chip">Gmail API</span></div><div class="auto-outcome"><div class="auto-outcome-label">Outcome</div><div class="auto-outcome-val">Follow-up time reduced from days to minutes.</div></div></div>
+    <div class="auto-card rv d4"><div class="auto-icon">&#9993;</div><div class="auto-type">Google Apps Script &middot; Communication</div><div class="auto-name">Invoice &amp; Payment Reminder Automation</div><div class="auto-problem">Automated scheduled payment reminders and confirmations using Google Sheets and Gmail.</div><div class="auto-chips"><span class="chip">Apps Script</span><span class="chip">Google Sheets</span><span class="chip">Gmail API</span></div><div class="auto-outcome"><div class="auto-outcome-label">Outcome</div><div class="auto-outcome-val">Follow-up time reduced from days to minutes.</div></div></div>
   </div>
 </div></section>
 
 <section id="research"><div class="wrap">
   <div class="rv"><div class="label-row" style="color:var(--gold)"><span class="label">Financial Research</span></div><h2 class="sec-title">Research Work</h2><p class="sec-sub">Structured financial research combining classical analysis frameworks with AI-powered synthesis tools.</p></div>
   <div class="research-grid">
-    <div class="rcard rv d1" style="border-left:2px solid var(--blue)"><div class="rcard-tag" style="color:var(--blue)">Banking Sector &middot; Equity Research</div><div class="rcard-title">HDFC Bank Deep Dive Analysis</div><div class="rcard-desc">Research covering business model, segment revenue breakdown, NIM trends, asset quality and financial performance.</div><div class="rcard-approach"><div class="rcard-approach-label">Approach & Tools</div><div class="rcard-approach-val">Prompt engineering, ChatGPT narrative synthesis, Tableau stock visualisation and ratio analysis.</div></div><a href="https://hdfc-research-kbxydjmh.manus.space/?code=8mGRU2e9ScMPr9vrhJ6S7B" target="_blank" class="rcard-link" style="color:var(--blue)">View Live Report -></a></div>
-    <div class="rcard rv d2" style="border-left:2px solid var(--gold)"><div class="rcard-tag" style="color:var(--gold)">Policy Research &middot; Startup Ecosystem</div><div class="rcard-title">Delhi Investment Framework</div><div class="rcard-desc">Investor-facing research covering Delhi's Solar Energy Policy 2023, Startup Policy 2019 and EV Policy 2020.</div><div class="rcard-approach"><div class="rcard-approach-label">Approach & Tools</div><div class="rcard-approach-val">AI-assisted policy document parsing via NotebookLM and structured investment insight synthesis.</div></div></div>
+    <div class="rcard rv d1" style="border-left:2px solid var(--blue)"><div class="rcard-tag" style="color:var(--blue)">Banking Sector &middot; Equity Research</div><div class="rcard-title">HDFC Bank Deep Dive Analysis</div><div class="rcard-desc">Research covering business model, segment revenue breakdown, NIM trends, asset quality and financial performance.</div><div class="rcard-approach"><div class="rcard-approach-label">Approach &amp; Tools</div><div class="rcard-approach-val">Prompt engineering, ChatGPT narrative synthesis, Tableau stock visualisation and ratio analysis.</div></div><a href="https://hdfc-research-kbxydjmh.manus.space/?code=8mGRU2e9ScMPr9vrhJ6S7B" target="_blank" class="rcard-link" style="color:var(--blue)">View Live Report -></a></div>
+    <div class="rcard rv d2" style="border-left:2px solid var(--gold)"><div class="rcard-tag" style="color:var(--gold)">Policy Research &middot; Startup Ecosystem</div><div class="rcard-title">Delhi Investment Framework</div><div class="rcard-desc">Investor-facing research covering Delhi's Solar Energy Policy 2023, Startup Policy 2019 and EV Policy 2020.</div><div class="rcard-approach"><div class="rcard-approach-label">Approach &amp; Tools</div><div class="rcard-approach-val">AI-assisted policy document parsing via NotebookLM and structured investment insight synthesis.</div></div></div>
   </div>
 </div></section>
 
@@ -283,7 +285,7 @@ footer{padding:24px 72px;border-top:1px solid var(--line);display:flex;justify-c
   <div class="certs-grid rv d1">
     <div class="cert"><div class="cert-ico">AI</div><div><div class="cert-issuer">CA Monk</div><div class="cert-name">AI for Finance - Level 1</div><div class="cert-date">April 2026 &middot; ID: XEDBWUSZ</div></div></div>
     <div class="cert"><div class="cert-ico">IB</div><div><div class="cert-issuer">Forage &middot; JP Morgan</div><div class="cert-name">Investment Banking Job Simulation</div><div class="cert-date">March 2026</div></div></div>
-    <div class="cert"><div class="cert-ico">FM</div><div><div class="cert-issuer">Edzeb</div><div class="cert-name">Financial Modelling & Valuation</div><div class="cert-date">June 2025</div></div></div>
+    <div class="cert"><div class="cert-ico">FM</div><div><div class="cert-issuer">Edzeb</div><div class="cert-name">Financial Modelling &amp; Valuation</div><div class="cert-date">June 2025</div></div></div>
     <div class="cert"><div class="cert-ico">SQL</div><div><div class="cert-issuer">Tutedude</div><div class="cert-name">SQL Course</div><div class="cert-date">April 2026</div></div></div>
     <div class="cert"><div class="cert-ico">TB</div><div><div class="cert-issuer">Tutedude</div><div class="cert-name">Tableau Course</div><div class="cert-date">April 2026</div></div></div>
   </div>
@@ -298,7 +300,7 @@ footer{padding:24px 72px;border-top:1px solid var(--line);display:flex;justify-c
       <div class="contact-links">
         <a href="mailto:Mr.sujalsharma1617@gmail.com" class="clink"><div class="clink-ico">&#9993;</div>Mr.sujalsharma1617@gmail.com</a>
         <a href="tel:+919318484541" class="clink"><div class="clink-ico">&#9742;</div>+91 93184 84541</a>
-        <a href="https://www.linkedin.com/in/sujal-sharma" target="_blank" class="clink"><div class="clink-ico">in</div>LinkedIn Profile</a>
+        <a href="https://www.linkedin.com/in/sujalsharma1611" target="_blank" class="clink"><div class="clink-ico">in</div>LinkedIn Profile</a>
       </div>
     </div>
     <div class="rv d2">
@@ -315,31 +317,56 @@ footer{padding:24px 72px;border-top:1px solid var(--line);display:flex;justify-c
 
 <footer>
   <div class="foot-l">&copy; 2026 <span>Sujal Sharma</span> &middot; Finance x AI x Automation &middot; Delhi, India</div>
-  <div class="foot-r"><a href="#hero">Back to Top</a><a href="mailto:Mr.sujalsharma1617@gmail.com">Email</a><a href="https://www.linkedin.com/in/sujal-sharma" target="_blank">LinkedIn</a></div>
+  <div class="foot-r">
+    <a href="#hero" onclick="smoothScroll(event,'hero')">Back to Top</a>
+    <a href="mailto:Mr.sujalsharma1617@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/sujalsharma1611" target="_blank">LinkedIn</a>
+  </div>
 </footer>
 
 <script>
-const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("on")}),{threshold:.1});
-document.querySelectorAll(".rv").forEach(el=>obs.observe(el));
-window.addEventListener("scroll",()=>{document.getElementById("nav").style.background=window.scrollY>60?"rgba(6,8,16,.96)":"rgba(6,8,16,.88)"});
-async function submitForm(e){
+// Smooth scroll function for all nav links and buttons
+function smoothScroll(e, targetId) {
   e.preventDefault();
-  const btn=document.getElementById("submit-btn"),msg=document.getElementById("form-msg");
-  const name=document.getElementById("f-name").value.trim(),email=document.getElementById("f-email").value.trim(),text=document.getElementById("f-msg").value.trim();
-  if(!name||!email||!text){msg.className="form-msg error";msg.textContent="Please fill in all fields.";return}
-  btn.textContent="Sending...";btn.style.opacity=".6";btn.style.pointerEvents="none";msg.className="form-msg";msg.textContent="";
-  try{
-    const res=await fetch("https://formspree.io/f/xkopbgdz",{method:"POST",headers:{"Accept":"application/json","Content-Type":"application/json"},body:JSON.stringify({name,email,message:text})});
-    if(!res.ok)throw new Error("Form failed");
-    msg.className="form-msg success";msg.textContent="Message sent. I will be in touch soon.";
-    document.getElementById("f-name").value="";document.getElementById("f-email").value="";document.getElementById("f-msg").value="";
-    btn.textContent="Sent";
-  }catch{
-    msg.className="form-msg error";msg.textContent="Something went wrong. Please email me directly.";
-    btn.textContent="Send Message";btn.style.opacity="1";btn.style.pointerEvents="auto";
+  const el = document.getElementById(targetId);
+  if (!el) return;
+  const navH = document.getElementById('nav').offsetHeight;
+  const top = el.getBoundingClientRect().top + window.scrollY - navH;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
+// Intersection observer for reveal animations
+const obs = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) e.target.classList.add("on");
+}), { threshold: .1 });
+document.querySelectorAll(".rv").forEach(el => obs.observe(el));
+
+// Nav background on scroll
+window.addEventListener("scroll", () => {
+  document.getElementById("nav").style.background = window.scrollY > 60 ? "rgba(6,8,16,.96)" : "rgba(6,8,16,.88)";
+});
+
+// Contact form submission
+async function submitForm(e) {
+  e.preventDefault();
+  const btn = document.getElementById("submit-btn"), msg = document.getElementById("form-msg");
+  const name = document.getElementById("f-name").value.trim(),
+        email = document.getElementById("f-email").value.trim(),
+        text = document.getElementById("f-msg").value.trim();
+  if (!name || !email || !text) { msg.className = "form-msg error"; msg.textContent = "Please fill in all fields."; return; }
+  btn.textContent = "Sending..."; btn.style.opacity = ".6"; btn.style.pointerEvents = "none";
+  msg.className = "form-msg"; msg.textContent = "";
+  try {
+    const res = await fetch("https://formspree.io/f/xkopbgdz", { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify({ name, email, message: text }) });
+    if (!res.ok) throw new Error("Form failed");
+    msg.className = "form-msg success"; msg.textContent = "Message sent. I will be in touch soon.";
+    document.getElementById("f-name").value = ""; document.getElementById("f-email").value = ""; document.getElementById("f-msg").value = "";
+    btn.textContent = "Sent";
+  } catch {
+    msg.className = "form-msg error"; msg.textContent = "Something went wrong. Please email me directly.";
+    btn.textContent = "Send Message"; btn.style.opacity = "1"; btn.style.pointerEvents = "auto";
   }
 }
 </script>
 </body>
 </html>
-```
